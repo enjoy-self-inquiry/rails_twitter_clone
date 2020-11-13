@@ -1,0 +1,2 @@
+class Murmur < ApplicationRecord
+end
