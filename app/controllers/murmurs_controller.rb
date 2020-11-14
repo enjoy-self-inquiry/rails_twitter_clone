@@ -1,5 +1,5 @@
 class MurmursController < ApplicationController
-  before_action :set_murmur, only: [:edit, :update]
+  before_action :set_murmur, only: [:edit, :update, :destroy]
   def index
     @murmurs = Murmur.all
   end
@@ -18,16 +18,19 @@ class MurmursController < ApplicationController
   end
 
   def edit
-    @murmur = Murmur.find(params[:id])
   end
 
   def update
-    @murmur = Murmur.find(params[:id])
     if @murmur.update(murmur_params)
       redirect_to murmurs_path, notice: "つぶやきを編集しました！"
     else
       render :edit
     end
+  end
+
+  def destroy
+    @murmur.destroy
+    redirect_to murmurs_path, notice: "ブログを削除しました！"
   end
 
   private
