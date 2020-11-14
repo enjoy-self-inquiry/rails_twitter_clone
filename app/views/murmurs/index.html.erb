@@ -6,7 +6,8 @@
 <% @murmurs.each do |murmur| %>
   <tr>
     <td><%= murmur.content %></td>
-    <td><%= link_to "つぶやきを編集する", edit_murmur_path(murmur.id) %></td>
+    <td><%= link_to "つぶやきを編集する", edit_murmur_path(murmur.id), data: {confirm: "本当に編集していいですか？"} %></td>
+    <td><%= link_to "つぶやきを削除する", murmur_path(murmur.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %></td>
   </tr>
 <% end %>
 </table>
