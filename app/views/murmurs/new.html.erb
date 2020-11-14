@@ -1,9 +1,21 @@
 <%= form_with(model: @murmur, local: true) do |form| %>
 
+<% if @murmur.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= @murmur.errors.count %>件のエラーがあります。</h2>
+    <ul>
+    <% @murmur.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
   <div class="murmur_content">
     <%= form.label :content %>
     <%= form.text_field :content %>
   </div>
   <%= form.submit %>
+
 <% end %>
 <%= link_to 'つぶやき一覧画面に戻る', murmurs_path %>
