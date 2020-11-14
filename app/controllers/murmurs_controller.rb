@@ -5,7 +5,11 @@ class MurmursController < ApplicationController
     @murmur = Murmur.new
   end
   def create
-    Murmur.create(title: params[:murmur][:content])
+    Murmur.create(murmur_params)
     redirect_to new_murmur_path
+  end
+  private
+  def murmur_params
+    params.require(:murmur).permit(:content)
   end
 end
