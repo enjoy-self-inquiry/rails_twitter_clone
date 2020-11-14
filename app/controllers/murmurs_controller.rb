@@ -6,5 +6,6 @@ class MurmursController < ApplicationController
   end
   def create
     Murmur.create(title: params[:murmur][:content])
+    redirect_to new_murmur_path
   end
 end
