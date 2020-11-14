@@ -1,4 +1,5 @@
 class MurmursController < ApplicationController
+  before_action :set_murmur, only: [:edit, :update]
   def index
     @murmurs = Murmur.all
   end
@@ -32,6 +33,10 @@ class MurmursController < ApplicationController
   private
   def murmur_params
     params.require(:murmur).permit(:content)
+  end
+
+  def set_murmur
+    @murmur = Murmur.find(params[:id])
   end
 
 end
