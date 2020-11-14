@@ -6,6 +6,7 @@
 <% @murmurs.each do |murmur| %>
   <tr>
     <td><%= murmur.content %></td>
+    <td><%= link_to "つぶやきを編集する", edit_murmur_path(murmur.id) %></td>
   </tr>
 <% end %>
 </table>
