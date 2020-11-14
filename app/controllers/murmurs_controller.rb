@@ -5,5 +5,6 @@ class MurmursController < ApplicationController
     @murmur = Murmur.new
   end
   def create
+    Murmur.create(title: params[:murmur][:content])
   end
 end
