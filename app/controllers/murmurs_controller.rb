@@ -33,6 +33,10 @@ class MurmursController < ApplicationController
     redirect_to murmurs_path, notice: "ブログを削除しました！"
   end
 
+  def confirm
+    @murmur = Murmur.new(murmur_params)
+  end
+
   private
   def murmur_params
     params.require(:murmur).permit(:content)
