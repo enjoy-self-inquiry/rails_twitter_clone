@@ -6,8 +6,12 @@ class MurmursController < ApplicationController
     @murmur = Murmur.new
   end
   def create
-    Murmur.create(murmur_params)
-    redirect_to new_murmur_path
+    @murmur = Murmur.create(murmur_params)
+    if @murmur.save
+      redirect_to new_murmur_path, notice: "つぶやきを投稿しました！"
+    else
+      render :new
+    end
   end
   private
   def murmur_params
