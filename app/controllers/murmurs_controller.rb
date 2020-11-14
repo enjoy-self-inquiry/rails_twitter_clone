@@ -1,5 +1,6 @@
 class MurmursController < ApplicationController
   def index
+    @murmurs = Murmur.all
   end
   def new
     @murmur = Murmur.new
