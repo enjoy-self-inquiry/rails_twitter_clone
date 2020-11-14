@@ -9,11 +9,15 @@ class MurmursController < ApplicationController
   end
 
   def create
-    @murmur = Murmur.create(murmur_params)
-    if @murmur.save
-      redirect_to murmurs_path, notice: "つぶやきを投稿しました！"
-    else
+    @murmur = Murmur.new(murmur_params)
+    if params[:back]
       render :new
+    else
+      if @murmur.save
+        redirect_to murmurs_path, notice: "つぶやきを投稿しました！"
+      else
+        render :new
+      end
     end
   end
 
@@ -35,6 +39,7 @@ class MurmursController < ApplicationController
 
   def confirm
     @murmur = Murmur.new(murmur_params)
+    render :new if @murmur.invalid?
   end
 
   private
