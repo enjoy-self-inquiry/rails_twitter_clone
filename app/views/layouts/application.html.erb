@@ -10,16 +10,20 @@
   </head>
 
   <body>
-    <header>
-      <ul>
-        <li><%= link_to 'つぶやき一覧', murmurs_path %></li>
-        <li><%= link_to 'つぶやく', new_murmur_path %></li>
-      </ul>
-    </header>
-    <%= yield %>
-    <footer>
-      <p>TwitterCloneつぶやきアプリ「Murmur」</p>
-      <p>Rails入門シリーズ課題＠2020/11/15</p>
-    </footer>
+    <div id="wrap">
+      <header>
+        <ul>
+          <li><%= link_to 'つぶやき一覧', murmurs_path %></li>
+          <li><%= link_to 'つぶやく', new_murmur_path %></li>
+        </ul>
+      </header>
+      <div id="contents">
+        <%= yield %>
+      </div>
+        <footer>
+          <p>TwitterCloneつぶやきアプリ「Murmur」</p>
+          <p>Rails入門シリーズ課題＠2020/11/15</p>
+        </footer>
+      </div>
   </body>
 </html>
