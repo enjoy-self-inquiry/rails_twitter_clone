@@ -3,7 +3,8 @@ html {
   min-height: 100%;
 }
 body {
-  text-align: center
+  text-align: center;
+  overflow: scroll;
 }
 header {
   width: 100%;
@@ -38,6 +39,6 @@ footer {
   margin: auto;
   padding-bottom: 10px;
   font-size: 12px;
-  position: absolute;
+  position: static;
   bottom: 0;
 }
