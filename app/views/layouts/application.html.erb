@@ -1,15 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tclone</title>
+    <title>TwitterClone</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header>
+      <ul>
+        <li><a href="#">つぶやき一覧</a></li>
+        <li><a href="#">つぶやく</a></li>
+      </ul>
+    </header>
     <%= yield %>
+    <footer>
+      <p>TwitterCloneつぶやきアプリ「Murmur」</p>
+      <p>Rails入門シリーズ課題＠2020/11/15</p>
+    </footer>
   </body>
 </html>
