@@ -2,11 +2,11 @@
 <p><%= notice %></p>
 <table>
   <tr>
-    <th>つぶやき</th>
+    <th class="title">つぶやき</th>
   </tr>
 <% @murmurs.each do |murmur| %>
   <tr>
-    <td><%= murmur.content %></td>
+    <td class="tweet"><%= murmur.content %></td>
     <td><%= link_to "つぶやきを編集する", edit_murmur_path(murmur.id), data: {confirm: "本当に編集していいですか？"} %></td>
     <td><%= link_to "つぶやきを削除する", murmur_path(murmur.id), method: :delete, data: {confirm: "本当に削除していいですか？"} %></td>
   </tr>
